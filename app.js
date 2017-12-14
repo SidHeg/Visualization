@@ -14,7 +14,8 @@ const bodyParser = require('body-parser');
 const path = require('path');
 
 const hostname = process.env.HOST || 'localhost';
-const port = process.env.PORT || 8080 ;
+// port for heroku or 9000
+const port = process.env.PORT || 9000;
 
 // this is middle-ware. i.e, this has access to res and req and also next
 const logger = function(req, res, next) {
@@ -50,6 +51,13 @@ server.get('/', (req, res) => {
 });
 
 
+
+server.listen(port, () => {
+	console.log('Server started on port: ' + port);
+});
+
+
+
 /*
 
 fs.readFile('public/new.html', (err, html) => {
@@ -63,11 +71,3 @@ fs.readFile('public/new.html', (err, html) => {
 	
 });
 */
-
-server.listen(port, () => {
-	console.log('Server started on host: ' + hostname + ', port: ' + port);
-});
-
-
-
-

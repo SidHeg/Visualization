@@ -11,13 +11,13 @@ d3.json("../json/new.json", function(error, combinedData) {
 function visualization() {
 	//user defined variables
 	var part2 = 500;
-	width = width-part2;
+	curvature = 0.1;
+	max_score = 100;
+	width = width - part2;
+	
+	//variables based on data
 	var num_of_students = data.length,
 		num_of_rows = Math.round(Math.sqrt((num_of_students*height)/width)),
-		curvature = 0.1;
-		max_score = 100;
-		
-		
 	
 	var num_of_cols = Math.ceil(num_of_students/ num_of_rows),
 		gridSize = parseFloat(Math.floor(height / num_of_rows) < Math.floor(width / num_of_cols) ? Math.floor(height / num_of_rows) : Math.floor(width / num_of_cols)),
