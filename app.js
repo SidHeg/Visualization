@@ -14,7 +14,7 @@ const bodyParser = require('body-parser');
 const path = require('path');
 
 const hostname = '127.0.0.1';
-const port = 8080 ;
+const port = process.env.PORT || 8080 ;
 
 // this is middle-ware. i.e, this has access to res and req and also next
 const logger = function(req, res, next) {
