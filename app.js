@@ -13,7 +13,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
 
-const hostname = '127.0.0.1';
+const hostname = process.env.HOST || 'localhost';
 const port = process.env.PORT || 8080 ;
 
 // this is middle-ware. i.e, this has access to res and req and also next
@@ -65,7 +65,7 @@ fs.readFile('public/new.html', (err, html) => {
 */
 
 server.listen(port, hostname, () => {
-	console.log('Server started on port ' + port);
+	console.log('Server started on host: ' + hostname + ', port: ' + port);
 });
 
 
