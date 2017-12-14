@@ -64,7 +64,7 @@ fs.readFile('public/new.html', (err, html) => {
 });
 */
 
-server.listen(port () => {
+server.listen(port, () => {
 	console.log('Server started on host: ' + hostname + ', port: ' + port);
 });
 
